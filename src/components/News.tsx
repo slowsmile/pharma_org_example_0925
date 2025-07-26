@@ -2,8 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const News = () => {
+  const { t } = useLanguage();
   const newsItems = [
     {
       id: 1,
@@ -58,10 +60,10 @@ const News = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-medical-blue-dark mb-4">
-            Latest News & Updates
+            {t('news.title')}
           </h2>
           <p className="text-lg text-professional-gray max-w-3xl mx-auto">
-            Stay informed with the latest developments in pharmaceutical science and industry news.
+            {t('news.subtitle')}
           </p>
         </div>
 
@@ -91,7 +93,7 @@ const News = () => {
                 {newsItems[0].excerpt}
               </p>
               <Button variant="professional" className="group">
-                Read Full Article
+                {t('news.readFull')}
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </CardContent>
@@ -125,7 +127,7 @@ const News = () => {
                       {item.readTime}
                     </div>
                     <Button variant="ghost" size="sm" className="group">
-                      Read More
+                      {t('news.readMore')}
                       <ArrowRight className="ml-1 h-3 w-3 group-hover:translate-x-1 transition-transform" />
                     </Button>
                   </div>
@@ -137,7 +139,7 @@ const News = () => {
 
         <div className="text-center">
           <Button variant="medical" size="lg">
-            View All News
+            {t('news.viewAll')}
           </Button>
         </div>
       </div>

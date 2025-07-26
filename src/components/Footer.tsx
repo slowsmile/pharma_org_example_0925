@@ -2,8 +2,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { Mail, Linkedin, Twitter, Facebook, ArrowUp } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
+  const { t } = useLanguage();
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -14,10 +16,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Organization Info */}
           <div className="space-y-4">
-            <h3 className="text-xl font-bold">PharmaPro Alliance</h3>
+            <h3 className="text-xl font-bold">{t('nav.organizationName')}</h3>
             <p className="text-medical-blue-light text-sm leading-relaxed">
-              Advancing pharmaceutical excellence through professional development, 
-              research collaboration, and innovative healthcare solutions.
+              {t('footer.description')}
             </p>
             <div className="flex space-x-4">
               <Button variant="ghost" size="sm" className="text-trust-white hover:text-medical-blue hover:bg-trust-white p-2">
@@ -34,7 +35,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Quick Links</h4>
+            <h4 className="text-lg font-semibold">{t('footer.quickLinks')}</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#about" className="text-medical-blue-light hover:text-trust-white transition-colors">About Us</a></li>
               <li><a href="#services" className="text-medical-blue-light hover:text-trust-white transition-colors">Services</a></li>
@@ -47,7 +48,7 @@ const Footer = () => {
 
           {/* Resources */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Resources</h4>
+            <h4 className="text-lg font-semibold">{t('footer.resources')}</h4>
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="text-medical-blue-light hover:text-trust-white transition-colors">Research Publications</a></li>
               <li><a href="#" className="text-medical-blue-light hover:text-trust-white transition-colors">Clinical Guidelines</a></li>
@@ -60,9 +61,9 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Stay Updated</h4>
+            <h4 className="text-lg font-semibold">{t('footer.stayUpdated')}</h4>
             <p className="text-medical-blue-light text-sm">
-              Subscribe to our newsletter for the latest pharmaceutical news and updates.
+              {t('footer.newsletterDesc')}
             </p>
             <div className="space-y-3">
               <Input 
@@ -72,7 +73,7 @@ const Footer = () => {
               />
               <Button variant="secondary" className="w-full group">
                 <Mail className="mr-2 h-4 w-4" />
-                Subscribe
+                {t('footer.subscribe')}
               </Button>
             </div>
           </div>
@@ -82,15 +83,15 @@ const Footer = () => {
 
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-sm text-medical-blue-light">
-            © 2024 PharmaPro Alliance. All rights reserved.
+            {t('footer.copyright')}
           </div>
           
           <div className="flex items-center space-x-6 text-sm">
             <a href="#" className="text-medical-blue-light hover:text-trust-white transition-colors">
-              Privacy Policy
+              {t('footer.privacyPolicy')}
             </a>
             <a href="#" className="text-medical-blue-light hover:text-trust-white transition-colors">
-              Terms of Service
+              {t('footer.termsOfService')}
             </a>
             <Button 
               variant="ghost" 

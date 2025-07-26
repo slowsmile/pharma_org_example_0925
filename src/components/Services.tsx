@@ -1,19 +1,21 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { GraduationCap, Users, FileText, Stethoscope, ArrowRight } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import conferenceImage from "@/assets/conference.jpg";
 import manufacturingImage from "@/assets/manufacturing.jpg";
 
 const Services = () => {
+  const { t } = useLanguage();
   return (
     <section id="services" className="py-20 bg-trust-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-medical-blue-dark mb-4">
-            Our Services & Programs
+            {t('services.title')}
           </h2>
           <p className="text-lg text-professional-gray max-w-3xl mx-auto">
-            Comprehensive support for pharmaceutical professionals at every stage of their career.
+            {t('services.subtitle')}
           </p>
         </div>
 
@@ -29,22 +31,21 @@ const Services = () => {
             <CardHeader>
               <CardTitle className="flex items-center text-medical-blue-dark">
                 <GraduationCap className="h-6 w-6 mr-2" />
-                Continuing Education
+                {t('services.continuingEducation')}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-foreground mb-4">
-                Stay current with the latest developments in pharmaceutical science through our 
-                comprehensive continuing education programs, workshops, and certification courses.
+                {t('services.continuingEducationDesc')}
               </p>
               <ul className="text-sm text-professional-gray space-y-2 mb-4">
-                <li>• Accredited CE programs</li>
-                <li>• Online and in-person workshops</li>
-                <li>• Professional certifications</li>
-                <li>• Industry expert speakers</li>
+                <li>{t('services.continuingEducationFeature1')}</li>
+                <li>{t('services.continuingEducationFeature2')}</li>
+                <li>{t('services.continuingEducationFeature3')}</li>
+                <li>{t('services.continuingEducationFeature4')}</li>
               </ul>
               <Button variant="medical" className="group">
-                Learn More
+                {t('services.learnMore')}
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </CardContent>
@@ -61,22 +62,21 @@ const Services = () => {
             <CardHeader>
               <CardTitle className="flex items-center text-medical-blue-dark">
                 <Users className="h-6 w-6 mr-2" />
-                Professional Networking
+                {t('services.networking')}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-foreground mb-4">
-                Connect with peers, mentors, and industry leaders through our exclusive networking 
-                events, forums, and collaborative research opportunities.
+                {t('services.networkingDesc')}
               </p>
               <ul className="text-sm text-professional-gray space-y-2 mb-4">
-                <li>• Annual conferences</li>
-                <li>• Regional meetups</li>
-                <li>• Online community forums</li>
-                <li>• Mentorship programs</li>
+                <li>{t('services.networkingFeature1')}</li>
+                <li>{t('services.networkingFeature2')}</li>
+                <li>{t('services.networkingFeature3')}</li>
+                <li>{t('services.networkingFeature4')}</li>
               </ul>
               <Button variant="medical" className="group">
-                Join Network
+                {t('services.joinNetwork')}
                 <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
             </CardContent>
@@ -88,16 +88,15 @@ const Services = () => {
             <CardHeader className="pb-4">
               <CardTitle className="flex items-center text-medical-blue-dark">
                 <FileText className="h-6 w-6 mr-2" />
-                Research Publications
+                {t('services.research')}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-foreground mb-4">
-                Access cutting-edge research, publish your findings, and contribute to the 
-                advancement of pharmaceutical knowledge through our peer-reviewed publications.
+                {t('services.researchDesc')}
               </p>
               <Button variant="outline" size="sm">
-                View Publications
+                {t('services.viewPublications')}
               </Button>
             </CardContent>
           </Card>
@@ -106,16 +105,15 @@ const Services = () => {
             <CardHeader className="pb-4">
               <CardTitle className="flex items-center text-medical-blue-dark">
                 <Stethoscope className="h-6 w-6 mr-2" />
-                Clinical Guidelines
+                {t('services.guidelines')}
               </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-foreground mb-4">
-                Evidence-based clinical guidelines and best practices to support optimal 
-                patient care and pharmaceutical interventions in various healthcare settings.
+                {t('services.guidelinesDesc')}
               </p>
               <Button variant="outline" size="sm">
-                Access Guidelines
+                {t('services.accessGuidelines')}
               </Button>
             </CardContent>
           </Card>

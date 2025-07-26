@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Users, Microscope } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/pharma-hero.jpg";
 
 const Hero = () => {
+  const { t } = useLanguage();
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -19,24 +21,23 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-4xl mx-auto">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-medical-blue-dark mb-6 leading-tight">
-            Advancing
+            {t('hero.title1')}
             <span className="block bg-gradient-to-r from-medical-blue-dark to-medical-blue bg-clip-text text-transparent">
-              Pharmaceutical Excellence
+              {t('hero.title2')}
             </span>
           </h1>
           
           <p className="text-lg md:text-xl text-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
-            Join the leading professional organization dedicated to advancing pharmaceutical science, 
-            fostering innovation, and connecting healthcare professionals worldwide.
+            {t('hero.subtitle')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button variant="professional" size="lg" className="group">
-              Become a Member
+              {t('hero.becomeMember')}
               <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
             </Button>
             <Button variant="medical" size="lg">
-              Explore Our Mission
+              {t('hero.exploreMission')}
             </Button>
           </div>
 
@@ -44,20 +45,20 @@ const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
             <div className="flex flex-col items-center p-6 bg-trust-white/80 backdrop-blur-sm rounded-lg shadow-card">
               <Shield className="h-12 w-12 text-medical-blue-dark mb-4" />
-              <h3 className="text-2xl font-bold text-medical-blue-dark mb-2">25,000+</h3>
-              <p className="text-foreground text-center">Certified Professionals</p>
+              <h3 className="text-2xl font-bold text-medical-blue-dark mb-2">{t('hero.stat1')}</h3>
+              <p className="text-foreground text-center">{t('hero.stat1Label')}</p>
             </div>
             
             <div className="flex flex-col items-center p-6 bg-trust-white/80 backdrop-blur-sm rounded-lg shadow-card">
               <Users className="h-12 w-12 text-medical-blue-dark mb-4" />
-              <h3 className="text-2xl font-bold text-medical-blue-dark mb-2">150+</h3>
-              <p className="text-foreground text-center">Global Partnerships</p>
+              <h3 className="text-2xl font-bold text-medical-blue-dark mb-2">{t('hero.stat2')}</h3>
+              <p className="text-foreground text-center">{t('hero.stat2Label')}</p>
             </div>
             
             <div className="flex flex-col items-center p-6 bg-trust-white/80 backdrop-blur-sm rounded-lg shadow-card">
               <Microscope className="h-12 w-12 text-medical-blue-dark mb-4" />
-              <h3 className="text-2xl font-bold text-medical-blue-dark mb-2">500+</h3>
-              <p className="text-foreground text-center">Research Publications</p>
+              <h3 className="text-2xl font-bold text-medical-blue-dark mb-2">{t('hero.stat3')}</h3>
+              <p className="text-foreground text-center">{t('hero.stat3Label')}</p>
             </div>
           </div>
         </div>

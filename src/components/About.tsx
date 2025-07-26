@@ -1,18 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, BookOpen, Globe, Heart } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import researchImage from "@/assets/research-lab.jpg";
 
 const About = () => {
+  const { t } = useLanguage();
   return (
     <section id="about" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-medical-blue-dark mb-4">
-            About PharmaPro Alliance
+            {t('about.title')}
           </h2>
           <p className="text-lg text-professional-gray max-w-3xl mx-auto">
-            For over three decades, we've been at the forefront of pharmaceutical advancement, 
-            connecting professionals and driving innovation in healthcare.
+            {t('about.subtitle')}
           </p>
         </div>
 
@@ -27,17 +28,13 @@ const About = () => {
           
           <div className="space-y-6">
             <h3 className="text-2xl font-bold text-medical-blue-dark">
-              Leading the Future of Pharmaceutical Science
+              {t('about.sectionTitle')}
             </h3>
             <p className="text-foreground leading-relaxed">
-              Our organization serves as the premier platform for pharmaceutical professionals 
-              to collaborate, learn, and advance the field of healthcare. We bridge the gap 
-              between research and practice, fostering innovation that improves patient outcomes globally.
+              {t('about.description1')}
             </p>
             <p className="text-foreground leading-relaxed">
-              Through our comprehensive programs, continuing education opportunities, and 
-              research initiatives, we empower our members to stay at the cutting edge of 
-              pharmaceutical science and contribute to meaningful healthcare advances.
+              {t('about.description2')}
             </p>
           </div>
         </div>
@@ -46,9 +43,9 @@ const About = () => {
           <Card className="text-center p-6 hover:shadow-hero transition-all duration-300">
             <CardContent className="pt-6">
               <Award className="h-12 w-12 text-medical-blue-dark mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-medical-blue-dark mb-2">Excellence</h4>
+              <h4 className="text-lg font-semibold text-medical-blue-dark mb-2">{t('about.excellence')}</h4>
               <p className="text-foreground text-sm">
-                Committed to the highest standards in pharmaceutical practice and research.
+                {t('about.excellenceDesc')}
               </p>
             </CardContent>
           </Card>
@@ -56,9 +53,9 @@ const About = () => {
           <Card className="text-center p-6 hover:shadow-hero transition-all duration-300">
             <CardContent className="pt-6">
               <BookOpen className="h-12 w-12 text-medical-blue-dark mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-medical-blue-dark mb-2">Education</h4>
+              <h4 className="text-lg font-semibold text-medical-blue-dark mb-2">{t('about.education')}</h4>
               <p className="text-foreground text-sm">
-                Providing continuous learning opportunities for professional development.
+                {t('about.educationDesc')}
               </p>
             </CardContent>
           </Card>
@@ -66,9 +63,9 @@ const About = () => {
           <Card className="text-center p-6 hover:shadow-hero transition-all duration-300">
             <CardContent className="pt-6">
               <Globe className="h-12 w-12 text-medical-blue-dark mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-medical-blue-dark mb-2">Global Impact</h4>
+              <h4 className="text-lg font-semibold text-medical-blue-dark mb-2">{t('about.globalImpact')}</h4>
               <p className="text-foreground text-sm">
-                Connecting professionals worldwide to address global health challenges.
+                {t('about.globalImpactDesc')}
               </p>
             </CardContent>
           </Card>
@@ -76,9 +73,9 @@ const About = () => {
           <Card className="text-center p-6 hover:shadow-hero transition-all duration-300">
             <CardContent className="pt-6">
               <Heart className="h-12 w-12 text-medical-blue-dark mx-auto mb-4" />
-              <h4 className="text-lg font-semibold text-medical-blue-dark mb-2">Patient Care</h4>
+              <h4 className="text-lg font-semibold text-medical-blue-dark mb-2">{t('about.patientCare')}</h4>
               <p className="text-foreground text-sm">
-                Dedicated to improving patient outcomes through innovative pharmaceutical solutions.
+                {t('about.patientCareDesc')}
               </p>
             </CardContent>
           </Card>
