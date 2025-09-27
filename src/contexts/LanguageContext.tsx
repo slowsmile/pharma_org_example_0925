@@ -108,6 +108,10 @@ const translations = {
     'footer.copyright': '© 2024 PharmaPro Alliance. All rights reserved.',
     'footer.privacyPolicy': 'Privacy Policy',
     'footer.termsOfService': 'Terms of Service',
+    
+    // Sponsors Section
+    'sponsors.title': 'Our Partners',
+    'sponsors.subtitle': 'Trusted by leading organizations in the pharmaceutical and healthcare industry',
   },
   zh: {
     // Navigation
@@ -206,6 +210,10 @@ const translations = {
     'footer.copyright': '© 2024 药学专业联盟。保留所有权利。',
     'footer.privacyPolicy': '隐私政策',
     'footer.termsOfService': '服务条款',
+    
+    // Sponsors Section
+    'sponsors.title': '我们的合作伙伴',
+    'sponsors.subtitle': '受到制药和医疗保健行业领先组织的信赖',
   }
 };
 
